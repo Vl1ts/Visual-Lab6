@@ -1,0 +1,16 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="450"
+			 Width="450" Height="450"
+             x:Class="Lab6.Views.NoteView">
+
+	<Grid RowDefinitions="*, 7*, *, *" ColumnDefinitions="*">
+		<TextBox Text="{Binding $parent[Window].DataContext.CurrentTitle}" Grid.Row="0" Grid.Column="0" Watermark="Введите название заметки" VerticalContentAlignment="Center"></TextBox>
+		<TextBox Text="{Binding $parent[Window].DataContext.CurrentDescription}" Grid.Row="1" Grid.Column="0" Watermark="Введите текст заметки" AcceptsReturn="True" TextWrapping="Wrap"></TextBox>
+		<Button  Command="{Binding $parent[Window].DataContext.AddNewNote}" IsEnabled="{Binding IsTitleExist}" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Ok</Button>
+		<Button  Command="{Binding $parent[Window].DataContext.ClrChange}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">Cancel</Button>
+	</Grid>
+	
+</UserControl>
